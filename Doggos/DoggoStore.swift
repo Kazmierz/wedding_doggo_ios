@@ -42,4 +42,21 @@ class DoggoStore {
     func unlockDoggo(race: String) {
         unlockDictionary[race] = true
     }
+    
+    func currentPassword() -> String {
+        let doggos = doggos()
+        var securePassword = (0..<Const.password.count).map { _ in "*" }.joined(separator: "")
+        doggos.forEach { doggo in
+            if doggo.isUnlocked {
+                let rs = securePassword.index(securePassword.startIndex, offsetBy: doggo.letterIndex)
+                securePassword.replaceSubrange((rs...rs), with: Const.password[rs...rs])
+            }
+        }
+        
+        return securePassword
+    }
+}
+
+enum Const {
+    static let password = "Haker i Beza"
 }

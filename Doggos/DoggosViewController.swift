@@ -19,6 +19,7 @@ class DoggosViewController: UIViewController {
         super.viewDidLoad()
         collectionView.register(UINib(nibName: "DoggoCell", bundle: .main), forCellWithReuseIdentifier: "DoggoCell")
         reloadData()
+        passwordLabel.text = store.currentPassword()
     }
     
     private func reloadData() {
@@ -83,5 +84,6 @@ extension DoggosViewController: ScanViewControllerDelegate {
         
         store.unlockDoggo(race: doggo.race)
         reloadData()
+        passwordLabel.text = store.currentPassword()
     }
 }

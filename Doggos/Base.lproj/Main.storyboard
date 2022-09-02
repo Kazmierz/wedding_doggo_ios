@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="41d-M6-bZc">
-                                <rect key="frame" x="0.0" y="116.5" width="414" height="745.5"/>
+                                <rect key="frame" x="0.0" y="125.5" width="414" height="736.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6gr-5C-0fp">
                                     <size key="itemSize" width="60" height="60"/>
@@ -49,7 +49,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haker i Beza" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6P-cT-9UC">
-                                <rect key="frame" x="20" y="64" width="374" height="32.5"/>
+                                <rect key="frame" x="20" y="73" width="374" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -62,16 +62,24 @@
                                     <segue destination="cpp-aJ-r5v" kind="show" identifier="scan" id="fcj-FY-mT5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hasło:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87g-n6-AkW">
+                                <rect key="frame" x="182.5" y="44" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Y6P-cT-9UC" firstAttribute="top" secondItem="87g-n6-AkW" secondAttribute="bottom" constant="8" id="6yG-AX-ABC"/>
+                            <constraint firstItem="87g-n6-AkW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9Kl-DF-4hn"/>
                             <constraint firstAttribute="bottom" secondItem="BUI-lX-bAZ" secondAttribute="bottom" constant="16" id="AfR-TC-ggG"/>
                             <constraint firstItem="Y6P-cT-9UC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="I15-5R-L4D"/>
+                            <constraint firstItem="87g-n6-AkW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ik5-br-qnY"/>
                             <constraint firstItem="41d-M6-bZc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ROR-tf-a3m"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BUI-lX-bAZ" secondAttribute="trailing" constant="16" id="gJx-tE-zNP"/>
                             <constraint firstItem="41d-M6-bZc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oKd-uJ-4G9"/>
-                            <constraint firstItem="Y6P-cT-9UC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="pjg-aZ-2nV"/>
                             <constraint firstItem="41d-M6-bZc" firstAttribute="top" secondItem="Y6P-cT-9UC" secondAttribute="bottom" constant="20" id="soq-NX-dGm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y6P-cT-9UC" secondAttribute="trailing" constant="20" id="tbf-pp-iab"/>
                             <constraint firstItem="41d-M6-bZc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="w4l-jH-H4f"/>
