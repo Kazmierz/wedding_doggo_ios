@@ -35,7 +35,7 @@ class DoggoStore {
             .init(race: "buldog", letterIndex: 1, image: UIImage(named: "buldog"),
                   isUnlocked: unlockDictionary["buldog"] == true,
                   isRaceGuessed: raceGuessedDictionary["buldog"] == true,
-                  qrCode: "1")
+                  qrCode: "2")
         ]
     }
     

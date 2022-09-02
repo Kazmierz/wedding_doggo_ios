@@ -30,6 +30,12 @@ class DoggosViewController: UIViewController {
         print("")
         return true
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "scan") {
+            (segue.destination as? ScanViewController)?.delegate = self
+        }
+    }
 }
 
 extension DoggosViewController: UICollectionViewDataSource {
@@ -54,11 +60,27 @@ extension DoggosViewController: UICollectionViewDataSource {
 extension DoggosViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: 120, height: 120)
+        .init(width: (view.bounds.width / 2) - 16, height: (view.bounds.width / 2) - 16)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let doggo = doggos[indexPath.item]
+//        let doggo = doggos[indexPath.item]
+//        store.unlockDoggo(race: doggo.race)
+//        reloadData()
+    }
+}
+
+extension DoggosViewController: ScanViewControllerDelegate {
+    func foundCode(code: String) {
+        guard let doggo = doggos.first(where: { $0.qrCode == code }) else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                let alert = UIAlertController(title: "This is not doggo!", message: nil, preferredStyle: .alert)
+                alert.addAction(.init(title: "OK", style: .cancel))
+                self.present(alert, animated: true)
+            }
+            return
+        }
+        
         store.unlockDoggo(race: doggo.race)
         reloadData()
     }
