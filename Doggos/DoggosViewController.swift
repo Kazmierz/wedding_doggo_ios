@@ -65,6 +65,7 @@ extension DoggosViewController: UICollectionViewDelegate, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard doggos[indexPath.item].isUnlocked else { return }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let doggoViewController = storyboard.instantiateViewController(withIdentifier: "DoggoDetailsViewController") as! DoggoDetailsViewController
         doggoViewController.doggo = doggos[indexPath.item]
