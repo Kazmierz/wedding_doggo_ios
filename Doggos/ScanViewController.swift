@@ -16,11 +16,19 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     weak var delegate: ScanViewControllerDelegate?
+    var container = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.black
+        container.translatesAutoresizingMaskIntoConstraints = false
+        view.insertSubview(container, at: 0)
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: container, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: container, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: container, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: container, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: 0)])
+        container.backgroundColor = UIColor.black
         captureSession = AVCaptureSession()
 
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return }
@@ -54,7 +62,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.frame = view.layer.bounds
         previewLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(previewLayer)
+        container.layer.addSublayer(previewLayer)
 
         captureSession.startRunning()
     }
@@ -107,4 +115,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
         return .portrait
     }
 
+    @IBAction func close() {
+        dismiss(animated: true)
+    }
 }

@@ -12,18 +12,56 @@
         <!--Doggo Details View Controller-->
         <scene sceneID="Qj6-ZZ-n58">
             <objects>
-                <viewController id="GuK-QV-Cam" customClass="DoggoDetailsViewController" customModule="Doggos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DoggoDetailsViewController" id="GuK-QV-Cam" customClass="DoggoDetailsViewController" customModule="Doggos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="USU-1r-rKB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uvn-re-ukV">
+                                <rect key="frame" x="20" y="84" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Uvn-re-ukV" secondAttribute="height" id="Tvr-r1-l12"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What's my race?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="07w-B8-mvD">
+                                <rect key="frame" x="20" y="466" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textChanged:" destination="GuK-QV-Cam" eventType="editingChanged" id="uC2-nk-6Si"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fn8-LQ-Qpc">
+                                <rect key="frame" x="333.5" y="52" width="60.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                <connections>
+                                    <action selector="close:" destination="GuK-QV-Cam" eventType="touchUpInside" id="iE8-xp-0y7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="eIz-gG-Dgl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eIz-gG-Dgl" firstAttribute="trailing" secondItem="Uvn-re-ukV" secondAttribute="trailing" constant="20" id="5Fd-da-KIK"/>
+                            <constraint firstItem="fn8-LQ-Qpc" firstAttribute="top" secondItem="eIz-gG-Dgl" secondAttribute="top" constant="8" id="6zV-xh-WkN"/>
+                            <constraint firstItem="Uvn-re-ukV" firstAttribute="leading" secondItem="eIz-gG-Dgl" secondAttribute="leading" constant="20" id="SGA-DM-aOH"/>
+                            <constraint firstItem="Uvn-re-ukV" firstAttribute="top" secondItem="eIz-gG-Dgl" secondAttribute="top" constant="40" id="fBw-IL-y9h"/>
+                            <constraint firstItem="07w-B8-mvD" firstAttribute="top" secondItem="Uvn-re-ukV" secondAttribute="bottom" constant="8" id="ffV-LC-qnr"/>
+                            <constraint firstItem="07w-B8-mvD" firstAttribute="leading" secondItem="eIz-gG-Dgl" secondAttribute="leading" constant="20" id="jwG-FW-gI7"/>
+                            <constraint firstItem="eIz-gG-Dgl" firstAttribute="trailing" secondItem="fn8-LQ-Qpc" secondAttribute="trailing" constant="20" id="nof-sV-a1X"/>
+                            <constraint firstItem="eIz-gG-Dgl" firstAttribute="trailing" secondItem="07w-B8-mvD" secondAttribute="trailing" constant="20" id="zmk-yo-ogR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hLw-pl-O1L"/>
+                    <connections>
+                        <outlet property="imageView" destination="Uvn-re-ukV" id="TsW-Mo-Jzu"/>
+                        <outlet property="textField" destination="07w-B8-mvD" id="Jt2-qf-Wdi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kYh-bn-Zph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023" y="-666"/>
+            <point key="canvasLocation" x="1021.7391304347827" y="-666.29464285714278"/>
         </scene>
         <!--Doggos View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -59,7 +97,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Scan"/>
                                 <connections>
-                                    <segue destination="cpp-aJ-r5v" kind="show" identifier="scan" id="fcj-FY-mT5"/>
+                                    <segue destination="cpp-aJ-r5v" kind="presentation" identifier="scan" id="fcj-FY-mT5"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hasło:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87g-n6-AkW">
@@ -102,8 +140,22 @@
                     <view key="view" contentMode="scaleToFill" id="b8s-Hb-LMk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dc-fR-uAd">
+                                <rect key="frame" x="333.5" y="8" width="60.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                <connections>
+                                    <action selector="close" destination="cpp-aJ-r5v" eventType="touchUpInside" id="B41-nq-qzv"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="lbu-y7-fu6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6dc-fR-uAd" firstAttribute="top" secondItem="b8s-Hb-LMk" secondAttribute="top" constant="8" id="O8m-KJ-W5n"/>
+                            <constraint firstItem="lbu-y7-fu6" firstAttribute="trailing" secondItem="6dc-fR-uAd" secondAttribute="trailing" constant="20" id="Ypq-IY-ZX5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qSR-c5-VB2"/>
                 </viewController>

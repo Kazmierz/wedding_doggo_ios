@@ -7,15 +7,44 @@
 
 import UIKit
 
+protocol DoggoDetailsViewControllerDelegate: AnyObject {
+    func setRaceGuessed(for race: String)
+}
+
 class DoggoDetailsViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    weak var delegate: DoggoDetailsViewControllerDelegate?
+    
+    var doggo: Doggo!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        imageView.image = doggo?.image
+        if doggo.isRaceGuessed {
+            setRaceGuesed()
+        }
     }
     
-
+    @IBAction func textChanged(_ textField: UITextField) {
+        if textField.text?.contains(doggo.race) == true {
+            setRaceGuesed()
+            delegate?.setRaceGuessed(for: doggo.race)
+        }
+    }
+    
+    func setRaceGuesed() {
+        textField.text = doggo.race
+        textField.isEnabled = false
+        textField.textColor = .green
+    }
+    
+    @IBAction func close(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

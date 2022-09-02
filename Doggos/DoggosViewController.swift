@@ -65,9 +65,11 @@ extension DoggosViewController: UICollectionViewDelegate, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let doggo = doggos[indexPath.item]
-//        store.unlockDoggo(race: doggo.race)
-//        reloadData()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let doggoViewController = storyboard.instantiateViewController(withIdentifier: "DoggoDetailsViewController") as! DoggoDetailsViewController
+        doggoViewController.doggo = doggos[indexPath.item]
+        doggoViewController.delegate = self
+        present(doggoViewController, animated: true)
     }
 }
 
@@ -83,6 +85,13 @@ extension DoggosViewController: ScanViewControllerDelegate {
         }
         
         store.unlockDoggo(race: doggo.race)
+        reloadData()
+    }
+}
+
+extension DoggosViewController: DoggoDetailsViewControllerDelegate {
+    func setRaceGuessed(for race: String) {
+        store.setRaceGuessed(race: race)
         reloadData()
         passwordLabel.text = store.currentPassword()
     }
