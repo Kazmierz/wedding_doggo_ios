@@ -311,7 +311,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LZ2UQ84PSV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Doggos/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use your camera to scan Doggos";
@@ -341,7 +341,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LZ2UQ84PSV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Doggos/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We use your camera to scan Doggos";

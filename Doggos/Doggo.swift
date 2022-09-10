@@ -14,4 +14,5 @@ struct Doggo {
     let isUnlocked: Bool
     let isRaceGuessed: Bool
     let qrCode: String
+    let borderColor: UIColor
 }
