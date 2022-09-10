@@ -52,8 +52,8 @@ class DoggoStore {
             race: DoggoStore.BORDER,
             letterIndex: 0,
             image: UIImage(named: DoggoStore.BORDER.lowercased()),
-            //isUnlocked: unlockDictionary[DoggoStore.BORDER] == true,
-            isUnlocked: true,
+            isUnlocked: unlockDictionary[DoggoStore.BORDER] == true,
+            //isUnlocked: true, // TESTING
             isRaceGuessed: raceGuessedDictionary[DoggoStore.BORDER] == true,
             qrCode: "sy(1)",
             borderColor: Colors.greenBorder
@@ -62,10 +62,10 @@ class DoggoStore {
             race: DoggoStore.GOLDEN,
             letterIndex: 1,
             image: UIImage(named: DoggoStore.GOLDEN.lowercased()),
-            //isUnlocked: unlockDictionary[DoggoStore.GOLDEN] == true,
-            isUnlocked: true,
-            //isRaceGuessed: raceGuessedDictionary[DoggoStore.GOLDEN] == true,
-            isRaceGuessed: true,
+            isUnlocked: unlockDictionary[DoggoStore.GOLDEN] == true,
+            //isUnlocked: true, // TESTING
+            isRaceGuessed: raceGuessedDictionary[DoggoStore.GOLDEN] == true,
+            //isRaceGuessed: true, // TESTING
             qrCode: "4s(2)",
             borderColor: Colors.greenBorder
         ),
