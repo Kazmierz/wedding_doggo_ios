@@ -23,14 +23,16 @@ class DoggoCell: UICollectionViewCell {
         placeholderImageView.isHidden = doggo.isUnlocked
         doggoImageView.image = doggo.image
         placeholderImageView.image = UIImage(named: "placeholder")
-        contentView.backgroundColor = Colors.greenBackground
-        textLabel.textColor = Colors.greenBorder
+        
+        contentView.backgroundColor = doggo.isUnlocked ? .clear : Colors.greenBackground
+        textLabel.textColor = doggo.isUnlocked ? .black : Colors.greenBorder
+        layer.borderColor = doggo.isUnlocked ? Colors.greenBackground.cgColor : Colors.greenBorder.cgColor
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        layer.borderColor = Colors.greenBorder.cgColor
+        
         layer.borderWidth = 2
         layer.cornerRadius = 16
     }

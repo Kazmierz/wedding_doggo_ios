@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -98,8 +99,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="41d-M6-bZc">
-                                <rect key="frame" x="48" y="125.5" width="318" height="736.5"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPf-bJ-hC9">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <color key="backgroundColor" name="pink"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yzb-FE-Itk">
+                                <rect key="frame" x="107" y="393" width="200" height="110"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUI-lX-bAZ">
+                                <rect key="frame" x="330" y="54" width="68" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="C0I-GV-htg"/>
+                                    <constraint firstAttribute="height" constant="68" id="f7L-Th-NiA"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" backgroundImage="camera"/>
+                                <connections>
+                                    <segue destination="cpp-aJ-r5v" kind="presentation" identifier="scan" id="fcj-FY-mT5"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="41d-M6-bZc">
+                                <rect key="frame" x="48" y="214.5" width="318" height="647.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6gr-5C-0fp">
                                     <size key="itemSize" width="60" height="60"/>
@@ -113,23 +133,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="s5y-Nr-fqL"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haker i Beza" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6P-cT-9UC">
-                                <rect key="frame" x="20" y="73" width="374" height="32.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUI-lX-bAZ">
-                                <rect key="frame" x="341" y="849" width="57" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Scan"/>
-                                <connections>
-                                    <segue destination="cpp-aJ-r5v" kind="presentation" identifier="scan" id="fcj-FY-mT5"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hasło:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87g-n6-AkW">
-                                <rect key="frame" x="182.5" y="44" width="49" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HASŁO:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87g-n6-AkW">
+                                <rect key="frame" x="163.5" y="124" width="87" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -137,22 +143,26 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Y6P-cT-9UC" firstAttribute="top" secondItem="87g-n6-AkW" secondAttribute="bottom" constant="8" id="6yG-AX-ABC"/>
-                            <constraint firstItem="87g-n6-AkW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9Kl-DF-4hn"/>
-                            <constraint firstAttribute="bottom" secondItem="BUI-lX-bAZ" secondAttribute="bottom" constant="16" id="AfR-TC-ggG"/>
-                            <constraint firstItem="Y6P-cT-9UC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="I15-5R-L4D"/>
+                            <constraint firstItem="bPf-bJ-hC9" firstAttribute="width" secondItem="yzb-FE-Itk" secondAttribute="width" multiplier="1.1" id="39N-zS-q5I"/>
+                            <constraint firstItem="87g-n6-AkW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="9Kl-DF-4hn"/>
+                            <constraint firstItem="bPf-bJ-hC9" firstAttribute="height" secondItem="yzb-FE-Itk" secondAttribute="height" multiplier="2" id="Ccb-l5-nmS"/>
                             <constraint firstItem="87g-n6-AkW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ik5-br-qnY"/>
                             <constraint firstItem="41d-M6-bZc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ROR-tf-a3m"/>
+                            <constraint firstItem="41d-M6-bZc" firstAttribute="top" secondItem="yzb-FE-Itk" secondAttribute="bottom" constant="40" id="YNf-0N-QN9"/>
+                            <constraint firstItem="yzb-FE-Itk" firstAttribute="top" secondItem="87g-n6-AkW" secondAttribute="bottom" constant="20" id="c4W-L2-LDV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BUI-lX-bAZ" secondAttribute="trailing" constant="16" id="gJx-tE-zNP"/>
+                            <constraint firstItem="yzb-FE-Itk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n4V-jB-VLx"/>
                             <constraint firstItem="41d-M6-bZc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-48" id="oKd-uJ-4G9"/>
-                            <constraint firstItem="41d-M6-bZc" firstAttribute="top" secondItem="Y6P-cT-9UC" secondAttribute="bottom" constant="20" id="soq-NX-dGm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y6P-cT-9UC" secondAttribute="trailing" constant="20" id="tbf-pp-iab"/>
+                            <constraint firstItem="bPf-bJ-hC9" firstAttribute="centerY" secondItem="yzb-FE-Itk" secondAttribute="centerY" id="ply-Q6-oq4"/>
+                            <constraint firstItem="BUI-lX-bAZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="qhm-6M-Zuw"/>
                             <constraint firstItem="41d-M6-bZc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="w4l-jH-H4f"/>
+                            <constraint firstItem="bPf-bJ-hC9" firstAttribute="centerX" secondItem="yzb-FE-Itk" secondAttribute="centerX" id="wFY-98-1XH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="41d-M6-bZc" id="my2-fS-8zV"/>
-                        <outlet property="passwordLabel" destination="Y6P-cT-9UC" id="Wgp-ba-wOZ"/>
+                        <outlet property="passwordStackView" destination="yzb-FE-Itk" id="OjZ-YP-av6"/>
+                        <outlet property="pinkView" destination="bPf-bJ-hC9" id="o8h-wd-PGm"/>
                         <outlet property="scanButton" destination="BUI-lX-bAZ" id="6ic-VH-TiE"/>
                     </connections>
                 </viewController>
@@ -192,7 +202,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" width="76" height="76"/>
         <image name="paws" width="42" height="77"/>
+        <namedColor name="pink">
+            <color red="0.92941176470588238" green="0.7803921568627451" blue="0.89803921568627454" alpha="0.42047111892700195" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

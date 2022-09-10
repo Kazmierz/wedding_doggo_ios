@@ -21,7 +21,6 @@
 		8960821D28C20114003E11C7 /* DoggoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8960821B28C20114003E11C7 /* DoggoCell.xib */; };
 		E1C587A328CCA40500A263F4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1C587A228CCA40500A263F4 /* Colors.xcassets */; };
 		E1C587A528CCB93400A263F4 /* UIButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C587A428CCB93400A263F4 /* UIButton+Style.swift */; };
-		E1C587A728CCBCA100A263F4 /* ShadowedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C587A628CCBCA100A263F4 /* ShadowedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +40,6 @@
 		8960821B28C20114003E11C7 /* DoggoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoggoCell.xib; sourceTree = "<group>"; };
 		E1C587A228CCA40500A263F4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E1C587A428CCB93400A263F4 /* UIButton+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Style.swift"; sourceTree = "<group>"; };
-		E1C587A628CCBCA100A263F4 /* ShadowedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +87,6 @@
 				8960821228C1FB31003E11C7 /* Doggo.swift */,
 				8960821428C1FBF9003E11C7 /* DoggoStore.swift */,
 				E1C587A428CCB93400A263F4 /* UIButton+Style.swift */,
-				E1C587A628CCBCA100A263F4 /* ShadowedButton.swift */,
 			);
 			path = Doggos;
 			sourceTree = "<group>";
@@ -167,7 +164,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1C587A728CCBCA100A263F4 /* ShadowedButton.swift in Sources */,
 				8960821528C1FBF9003E11C7 /* DoggoStore.swift in Sources */,
 				896081FD28C1F5FD003E11C7 /* DoggosViewController.swift in Sources */,
 				896081F928C1F5FD003E11C7 /* AppDelegate.swift in Sources */,

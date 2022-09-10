@@ -9,30 +9,44 @@ import UIKit
 
 class DoggosViewController: UIViewController {
 
-    @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var scanButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var passwordStackView: UIStackView!
+    @IBOutlet weak var pinkView: UIView!
+    
     private var store = DoggoStore()
     private var doggos: [Doggo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         collectionView.register(UINib(nibName: "DoggoCell", bundle: .main), forCellWithReuseIdentifier: "DoggoCell")
         reloadData()
-        passwordLabel.text = store.currentPassword()
+        
+        pinkView.layer.cornerRadius = 8
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        passwordStackView.subviews.forEach { $0.removeFromSuperview() }
+        store.currentPasswordImages()
+            .map {
+                let iv = UIImageView(image: $0)
+                iv.frame = CGRect(x: 0, y: 0, width: 66, height: 66)
+                iv.contentMode = .scaleAspectFit
+                return iv
+            }
+            .forEach { passwordStackView.addArrangedSubview($0) }
     }
     
     private func reloadData() {
         doggos = store.doggos()
         
-        // debug
-        
-        
         collectionView.reloadData()
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        print("")
         return true
     }
     
@@ -57,7 +71,7 @@ extension DoggosViewController: UICollectionViewDataSource {
 
 extension DoggosViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: (collectionView.bounds.width / 2) - 16, height: (collectionView.bounds.width / 2) - 16)
+        .init(width: (collectionView.bounds.width / 2) - 6, height: (collectionView.bounds.width / 2) - 6)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -90,6 +104,6 @@ extension DoggosViewController: DoggoDetailsViewControllerDelegate {
     func setRaceGuessed(for race: String) {
         store.setRaceGuessed(race: race)
         reloadData()
-        passwordLabel.text = store.currentPassword()
+        //passwordLabel.text = store.currentPassword()
     }
 }
