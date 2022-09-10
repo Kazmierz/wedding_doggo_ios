@@ -178,20 +178,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dc-fR-uAd">
-                                <rect key="frame" x="333.5" y="8" width="60.5" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Close"/>
-                                <connections>
-                                    <action selector="close" destination="cpp-aJ-r5v" eventType="touchUpInside" id="B41-nq-qzv"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4M-u8-p07">
+                                <rect key="frame" x="0.0" y="748" width="414" height="94"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dc-fR-uAd">
+                                        <rect key="frame" x="167.5" y="31.5" width="79" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="ANULUJ">
+                                            <color key="baseForegroundColor" name="green_border"/>
+                                            <color key="baseBackgroundColor" name="green_background"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="close" destination="cpp-aJ-r5v" eventType="touchUpInside" id="B41-nq-qzv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="O3I-XY-Nay"/>
+                                    <constraint firstItem="6dc-fR-uAd" firstAttribute="centerX" secondItem="s4M-u8-p07" secondAttribute="centerX" id="mkP-7Z-iet"/>
+                                    <constraint firstItem="6dc-fR-uAd" firstAttribute="centerY" secondItem="s4M-u8-p07" secondAttribute="centerY" id="qJi-5t-1mm"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lbu-y7-fu6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6dc-fR-uAd" firstAttribute="top" secondItem="b8s-Hb-LMk" secondAttribute="top" constant="8" id="O8m-KJ-W5n"/>
-                            <constraint firstItem="lbu-y7-fu6" firstAttribute="trailing" secondItem="6dc-fR-uAd" secondAttribute="trailing" constant="20" id="Ypq-IY-ZX5"/>
+                            <constraint firstAttribute="bottom" secondItem="s4M-u8-p07" secondAttribute="bottom" id="BsQ-E9-Ieu"/>
+                            <constraint firstItem="lbu-y7-fu6" firstAttribute="trailing" secondItem="s4M-u8-p07" secondAttribute="trailing" id="aW3-YR-3eH"/>
+                            <constraint firstItem="s4M-u8-p07" firstAttribute="leading" secondItem="lbu-y7-fu6" secondAttribute="leading" id="hds-9G-Kth"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qSR-c5-VB2"/>
@@ -204,8 +219,14 @@
     <resources>
         <image name="camera" width="76" height="76"/>
         <image name="paws" width="42" height="77"/>
+        <namedColor name="green_background">
+            <color red="0.24313725490196078" green="0.41176470588235292" blue="0.16470588235294117" alpha="0.28999999165534973" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="green_border">
+            <color red="0.24313725490196078" green="0.41176470588235292" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="pink">
-            <color red="0.92941176470588238" green="0.7803921568627451" blue="0.89803921568627454" alpha="0.42047111892700195" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92941176470588238" green="0.7803921568627451" blue="0.89803921568627454" alpha="0.41999998688697815" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

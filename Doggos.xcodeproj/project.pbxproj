@@ -19,6 +19,7 @@
 		8960821328C1FB31003E11C7 /* Doggo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960821228C1FB31003E11C7 /* Doggo.swift */; };
 		8960821528C1FBF9003E11C7 /* DoggoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8960821428C1FBF9003E11C7 /* DoggoStore.swift */; };
 		8960821D28C20114003E11C7 /* DoggoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8960821B28C20114003E11C7 /* DoggoCell.xib */; };
+		E149582C28CCDEBA00599A0E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E149582B28CCDEBA00599A0E /* IQKeyboardManagerSwift */; };
 		E1C587A328CCA40500A263F4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1C587A228CCA40500A263F4 /* Colors.xcassets */; };
 		E1C587A528CCB93400A263F4 /* UIButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C587A428CCB93400A263F4 /* UIButton+Style.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E149582C28CCDEBA00599A0E /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +109,9 @@
 			dependencies = (
 			);
 			name = Doggos;
+			packageProductDependencies = (
+				E149582B28CCDEBA00599A0E /* IQKeyboardManagerSwift */,
+			);
 			productName = Doggos;
 			productReference = 896081F528C1F5FD003E11C7 /* Doggos.app */;
 			productType = "com.apple.product-type.application";
@@ -135,6 +140,9 @@
 				Base,
 			);
 			mainGroup = 896081EC28C1F5FD003E11C7;
+			packageReferences = (
+				E149582A28CCDEBA00599A0E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 896081F628C1F5FD003E11C7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -396,6 +404,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E149582A28CCDEBA00599A0E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E149582B28CCDEBA00599A0E /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E149582A28CCDEBA00599A0E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 896081ED28C1F5FD003E11C7 /* Project object */;
 }
