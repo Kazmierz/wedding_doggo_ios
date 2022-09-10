@@ -21,7 +21,6 @@
 		8960821D28C20114003E11C7 /* DoggoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8960821B28C20114003E11C7 /* DoggoCell.xib */; };
 		E149582C28CCDEBA00599A0E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E149582B28CCDEBA00599A0E /* IQKeyboardManagerSwift */; };
 		E1C587A328CCA40500A263F4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1C587A228CCA40500A263F4 /* Colors.xcassets */; };
-		E1C587A528CCB93400A263F4 /* UIButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C587A428CCB93400A263F4 /* UIButton+Style.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +39,6 @@
 		8960821428C1FBF9003E11C7 /* DoggoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoggoStore.swift; sourceTree = "<group>"; };
 		8960821B28C20114003E11C7 /* DoggoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoggoCell.xib; sourceTree = "<group>"; };
 		E1C587A228CCA40500A263F4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		E1C587A428CCB93400A263F4 /* UIButton+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Style.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +86,6 @@
 				8960821028C1F990003E11C7 /* DoggoDetailsViewController.swift */,
 				8960821228C1FB31003E11C7 /* Doggo.swift */,
 				8960821428C1FBF9003E11C7 /* DoggoStore.swift */,
-				E1C587A428CCB93400A263F4 /* UIButton+Style.swift */,
 			);
 			path = Doggos;
 			sourceTree = "<group>";
@@ -178,7 +175,6 @@
 				8960821128C1F990003E11C7 /* DoggoDetailsViewController.swift in Sources */,
 				8960820F28C1F947003E11C7 /* ScanViewController.swift in Sources */,
 				8960820D28C1F767003E11C7 /* DoggoCell.swift in Sources */,
-				E1C587A528CCB93400A263F4 /* UIButton+Style.swift in Sources */,
 				8960821328C1FB31003E11C7 /* Doggo.swift in Sources */,
 				896081FB28C1F5FD003E11C7 /* SceneDelegate.swift in Sources */,
 			);

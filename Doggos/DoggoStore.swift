@@ -202,30 +202,13 @@ enum Const {
     static let password = "Haker i Beza"
 }
 
-func imageWith(name: String?, width: CGFloat = 16, height: CGFloat = 16) -> UIImage? {
-     let frame = CGRect(x: 0, y: 0, width: width, height: height)
-     let nameLabel = UILabel(frame: frame)
-     nameLabel.textAlignment = .center
-     nameLabel.textColor = .black
-     nameLabel.font = UIFont.boldSystemFont(ofSize: 16)
-     nameLabel.text = name
-     UIGraphicsBeginImageContext(frame.size)
-      if let currentContext = UIGraphicsGetCurrentContext() {
-         nameLabel.layer.render(in: currentContext)
-         let nameImage = UIGraphicsGetImageFromCurrentImageContext()
-         return nameImage
-      }
-      return nil
-}
-
 func imageWith(name: String?) -> UIImage? {
-    //let frame = CGRect(x: 0, y: 0, width: width, height: height)
     let nameLabel = UILabel(frame: .zero)
     nameLabel.textAlignment = .center
     nameLabel.textColor = .black
     nameLabel.font = UIFont.boldSystemFont(ofSize: 16)
     nameLabel.text = name
-    let size = nameLabel.sizeToFit()
+    nameLabel.sizeToFit()
     UIGraphicsBeginImageContext(nameLabel.frame.size)
     if let currentContext = UIGraphicsGetCurrentContext() {
         nameLabel.layer.render(in: currentContext)
