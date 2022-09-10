@@ -28,7 +28,11 @@ class DoggosViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+    
+        reloadPasswordView()
+    }
+    
+    private func reloadPasswordView() {
         passwordStackView.subviews.forEach { $0.removeFromSuperview() }
         store.currentPasswordImages()
             .map {
@@ -104,6 +108,6 @@ extension DoggosViewController: DoggoDetailsViewControllerDelegate {
     func setRaceGuessed(for race: String) {
         store.setRaceGuessed(race: race)
         reloadData()
-        //passwordLabel.text = store.currentPassword()
+        reloadPasswordView()
     }
 }
