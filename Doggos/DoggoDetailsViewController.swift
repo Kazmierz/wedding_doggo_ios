@@ -22,37 +22,33 @@ class DoggoDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         imageView.image = doggo?.image
+        
         if doggo.isRaceGuessed {
-            setRaceGuesed()
+            setRaceGuessed()
         }
     }
     
     @IBAction func textChanged(_ textField: UITextField) {
-        if textField.text?.contains(doggo.race) == true {
-            setRaceGuesed()
-            delegate?.setRaceGuessed(for: doggo.race)
+        guard let text = textField.text else { return }
+        
+        if text.lowercased().contains(doggo.race.lowercased()) {
+            setRaceGuessed()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) { [unowned self] in
+                self.delegate?.setRaceGuessed(for: self.doggo.race)
+                self.dismiss(animated: true)
+            }
         }
     }
     
-    func setRaceGuesed() {
-        textField.text = doggo.race
+    func setRaceGuessed() {
+        textField.text = doggo.race + "  ✅"
         textField.isEnabled = false
-        textField.textColor = .green
+        textField.textColor = Colors.greenBorder
     }
     
     @IBAction func close(_ sender: Any) {
         dismiss(animated: true)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

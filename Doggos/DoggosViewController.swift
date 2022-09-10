@@ -24,6 +24,10 @@ class DoggosViewController: UIViewController {
     
     private func reloadData() {
         doggos = store.doggos()
+        
+        // debug
+        
+        
         collectionView.reloadData()
     }
 
@@ -46,22 +50,14 @@ extension DoggosViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DoggoCell", for: indexPath) as! DoggoCell
-        let doggo = doggos[indexPath.item]
-        if doggo.isUnlocked {
-            cell.nameLabel.text = doggo.isRaceGuessed ? doggo.race : "Guess my race!"
-        } else {
-            cell.nameLabel.text = doggo.isRaceGuessed ? doggo.race : "Unlock me!"
-        }
-        
-        cell.imageView.image = doggo.isUnlocked ? doggo.image : UIImage(named: "placeholder")
+        cell.configure(for: doggos[indexPath.item])
         return cell
     }
 }
 
 extension DoggosViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: (view.bounds.width / 2) - 16, height: (view.bounds.width / 2) - 16)
+        .init(width: (collectionView.bounds.width / 2) - 16, height: (collectionView.bounds.width / 2) - 16)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

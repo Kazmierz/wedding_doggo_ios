@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum Colors {
+    static let greenBackground: UIColor = UIColor(named: "green_background")!
+    static let greenBorder: UIColor = UIColor(named: "green_border")!
+    static let pink: UIColor = UIColor(named: "pink")!
+}
+
 class DoggoStore {
     
     static let PASSWORD = "BEZA I HAKER"
@@ -22,9 +28,6 @@ class DoggoStore {
     static let AKITA = "AKITA"
     static let DALMATYNCZYK = "DALMATYNCZYK"
     static let OWCZAREK_AUSTRALIJSKI = "OWCZAREK AUSTRALIJSKI"
-    
-    static let PINK_BORDER_UI_COLOR = UIColor(named: "pink_border") ?? <#default value#>
-    static let GREEN_BACKGROUND_UI_COLOR = UIColor(named: "green_background") ?? <#default value#>
 
     private var unlockDictionary: [String: Bool] {
         get {
@@ -44,117 +47,118 @@ class DoggoStore {
         }
     }
 
-    func doggos() -> [Doggo] {
-        [
-            .init(
-                    race: DoggoStore.BORDER,
-                    letterIndex: 0,
-                    image: UIImage(named: DoggoStore.BORDER.lowercased()),
-                    isUnlocked: unlockDictionary[DoggoStore.BORDER] == true,
-                    isRaceGuessed: raceGuessedDictionary[DoggoStore.BORDER] == true,
-                    qrCode: "sy(1)",
-                    borderColor: DoggoStore.PINK_BORDER_UI_COLOR
-            ),
-            .init(
-                    race: DoggoStore.GOLDEN,
-                    letterIndex: 1,
-                    image: UIImage(named: DoggoStore.GOLDEN.lowercased()),
-                    isUnlocked: unlockDictionary[DoggoStore.GOLDEN] == true,
-                    isRaceGuessed: raceGuessedDictionary[DoggoStore.GOLDEN] == true,
-                    qrCode: "4s(2)",
-                    borderColor: DoggoStore.GREEN_BACKGROUND_UI_COLOR
-            ),
-            .init(
-                    race: DoggoStore.CORGI,
-                    letterIndex: 2,
-                    image: UIImage(named: DoggoStore.CORGI.lowercased()),
-                    isUnlocked: unlockDictionary[DoggoStore.CORGI] == true,
-                    isRaceGuessed: raceGuessedDictionary[DoggoStore.CORGI] == true,
-                    qrCode: "l_(3)",
-                    borderColor: DoggoStore.GREEN_BACKGROUND_UI_COLOR
-            ),
-            .init(
-                    race: DoggoStore.JAMNIK,
-                    letterIndex: 3,
-                    image: UIImage(named: DoggoStore.JAMNIK.lowercased()),
-                    isUnlocked: unlockDictionary[DoggoStore.JAMNIK] == true,
-                    isRaceGuessed: raceGuessedDictionary[DoggoStore.JAMNIK] == true,
-                    qrCode: "cv(4)",
-                    borderColor: DoggoStore.PINK_BORDER_UI_COLOR
-            ),
-            .init(
-                    race: DoggoStore.OWCZAREK_NIEMIECKI,
-                    letterIndex: 4,
-                    image: UIImage(named: DoggoStore.OWCZAREK_NIEMIECKI.lowercased()),
-                    isUnlocked: unlockDictionary[DoggoStore.OWCZAREK_NIEMIECKI] == true,
-                    isRaceGuessed: raceGuessedDictionary[DoggoStore.OWCZAREK_NIEMIECKI] == true,
-                    qrCode: "3f(5)",
-                    borderColor: DoggoStore.GREEN_BACKGROUND_UI_COLOR
-            ),
-            .init(
-                    race: DoggoStore.CHART,
-                    letterIndex: 5,
-                    image: UIImage(named: DoggoStore.CHART.lowercased()),
-                    isUnlocked: unlockDictionary[DoggoStore.CHART] == true,
-                    isRaceGuessed: raceGuessedDictionary[DoggoStore.CHART] == true,
-                    qrCode: "xy(6)",
-                    borderColor: DoggoStore.GREEN_BACKGROUND_UI_COLOR
-            ),
-            .init(
-                    race: DoggoStore.PUDEL,
-                    letterIndex: 6,
-                    image: UIImage(named: DoggoStore.PUDEL.lowercased()),
-                    isUnlocked: unlockDictionary[DoggoStore.PUDEL] == true,
-                    isRaceGuessed: raceGuessedDictionary[DoggoStore.PUDEL] == true,
-                    qrCode: "_f(7)",
-                    borderColor: DoggoStore.PINK_BORDER_UI_COLOR
-            ),
-            .init(
-                    race: DoggoStore.SAMOYED,
-                    letterIndex: 7,
-                    image: UIImage(named: DoggoStore.SAMOYED.lowercased()),
-                    isUnlocked: unlockDictionary[DoggoStore.SAMOYED] == true,
-                    isRaceGuessed: raceGuessedDictionary[DoggoStore.SAMOYED] == true,
-                    qrCode: "0z(8)",
-                    borderColor: DoggoStore.PINK_BORDER_UI_COLOR
-            ),
-            .init(
-                    race: DoggoStore.HUSKY,
-                    letterIndex: 8,
-                    image: UIImage(named: DoggoStore.HUSKY.lowercased()),
-                    isUnlocked: unlockDictionary[DoggoStore.HUSKY] == true,
-                    isRaceGuessed: raceGuessedDictionary[DoggoStore.HUSKY] == true,
-                    qrCode: "_q(9)",
-                    borderColor: DoggoStore.GREEN_BACKGROUND_UI_COLOR
-            ),
-            .init(
-                    race: DoggoStore.AKITA,
-                    letterIndex: 9,
-                    image: UIImage(named: DoggoStore.AKITA.lowercased()),
-                    isUnlocked: unlockDictionary[DoggoStore.AKITA] == true,
-                    isRaceGuessed: raceGuessedDictionary[DoggoStore.AKITA] == true,
-                    qrCode: "r_(10)",
-                    borderColor: DoggoStore.PINK_BORDER_UI_COLOR
-            ),
-            .init(
-                    race: DoggoStore.DALMATYNCZYK,
-                    letterIndex: 10,
-                    image: UIImage(named: DoggoStore.DALMATYNCZYK.lowercased()),
-                    isUnlocked: unlockDictionary[DoggoStore.DALMATYNCZYK] == true,
-                    isRaceGuessed: raceGuessedDictionary[DoggoStore.DALMATYNCZYK] == true,
-                    qrCode: "o3fg(11)",
-                    borderColor: DoggoStore.PINK_BORDER_UI_COLOR
-            ),
-            .init(
-                    race: DoggoStore.OWCZAREK_AUSTRALIJSKI,
-                    letterIndex: 11,
-                    image: UIImage(named: DoggoStore.OWCZAREK_AUSTRALIJSKI.lowercased()),
-                    isUnlocked: unlockDictionary[DoggoStore.OWCZAREK_AUSTRALIJSKI] == true,
-                    isRaceGuessed: raceGuessedDictionary[DoggoStore.OWCZAREK_AUSTRALIJSKI] == true,
-                    qrCode: "https://tinyurl.com/kz833h3j",
-                    borderColor: DoggoStore.PINK_BORDER_UI_COLOR
-            )
-        ]
+    func doggos() -> [Doggo] {[
+        .init(
+            race: DoggoStore.BORDER,
+            letterIndex: 0,
+            image: UIImage(named: DoggoStore.BORDER.lowercased()),
+            //isUnlocked: unlockDictionary[DoggoStore.BORDER] == true,
+            isUnlocked: true,
+            isRaceGuessed: raceGuessedDictionary[DoggoStore.BORDER] == true,
+            qrCode: "sy(1)",
+            borderColor: Colors.greenBorder
+        ),
+        .init(
+            race: DoggoStore.GOLDEN,
+            letterIndex: 1,
+            image: UIImage(named: DoggoStore.GOLDEN.lowercased()),
+            //isUnlocked: unlockDictionary[DoggoStore.GOLDEN] == true,
+            isUnlocked: true,
+            //isRaceGuessed: raceGuessedDictionary[DoggoStore.GOLDEN] == true,
+            isRaceGuessed: true,
+            qrCode: "4s(2)",
+            borderColor: Colors.greenBorder
+        ),
+        .init(
+            race: DoggoStore.CORGI,
+            letterIndex: 2,
+            image: UIImage(named: DoggoStore.CORGI.lowercased()),
+            isUnlocked: unlockDictionary[DoggoStore.CORGI] == true,
+            isRaceGuessed: raceGuessedDictionary[DoggoStore.CORGI] == true,
+            qrCode: "l_(3)",
+            borderColor: Colors.greenBorder
+        ),
+        .init(
+            race: DoggoStore.JAMNIK,
+            letterIndex: 3,
+            image: UIImage(named: DoggoStore.JAMNIK.lowercased()),
+            isUnlocked: unlockDictionary[DoggoStore.JAMNIK] == true,
+            isRaceGuessed: raceGuessedDictionary[DoggoStore.JAMNIK] == true,
+            qrCode: "cv(4)",
+            borderColor: Colors.greenBorder
+        ),
+        .init(
+            race: DoggoStore.OWCZAREK_NIEMIECKI,
+            letterIndex: 4,
+            image: UIImage(named: DoggoStore.OWCZAREK_NIEMIECKI.lowercased()),
+            isUnlocked: unlockDictionary[DoggoStore.OWCZAREK_NIEMIECKI] == true,
+            isRaceGuessed: raceGuessedDictionary[DoggoStore.OWCZAREK_NIEMIECKI] == true,
+            qrCode: "3f(5)",
+            borderColor: Colors.greenBorder
+        ),
+        .init(
+            race: DoggoStore.CHART,
+            letterIndex: 5,
+            image: UIImage(named: DoggoStore.CHART.lowercased()),
+            isUnlocked: unlockDictionary[DoggoStore.CHART] == true,
+            isRaceGuessed: raceGuessedDictionary[DoggoStore.CHART] == true,
+            qrCode: "xy(6)",
+            borderColor: Colors.greenBorder
+        ),
+        .init(
+            race: DoggoStore.PUDEL,
+            letterIndex: 6,
+            image: UIImage(named: DoggoStore.PUDEL.lowercased()),
+            isUnlocked: unlockDictionary[DoggoStore.PUDEL] == true,
+            isRaceGuessed: raceGuessedDictionary[DoggoStore.PUDEL] == true,
+            qrCode: "_f(7)",
+            borderColor: Colors.greenBorder
+        ),
+        .init(
+            race: DoggoStore.SAMOYED,
+            letterIndex: 7,
+            image: UIImage(named: DoggoStore.SAMOYED.lowercased()),
+            isUnlocked: unlockDictionary[DoggoStore.SAMOYED] == true,
+            isRaceGuessed: raceGuessedDictionary[DoggoStore.SAMOYED] == true,
+            qrCode: "0z(8)",
+            borderColor: Colors.greenBorder
+        ),
+        .init(
+            race: DoggoStore.HUSKY,
+            letterIndex: 8,
+            image: UIImage(named: DoggoStore.HUSKY.lowercased()),
+            isUnlocked: unlockDictionary[DoggoStore.HUSKY] == true,
+            isRaceGuessed: raceGuessedDictionary[DoggoStore.HUSKY] == true,
+            qrCode: "_q(9)",
+            borderColor: Colors.greenBorder
+        ),
+        .init(
+            race: DoggoStore.AKITA,
+            letterIndex: 9,
+            image: UIImage(named: DoggoStore.AKITA.lowercased()),
+            isUnlocked: unlockDictionary[DoggoStore.AKITA] == true,
+            isRaceGuessed: raceGuessedDictionary[DoggoStore.AKITA] == true,
+            qrCode: "r_(10)",
+            borderColor: Colors.greenBorder
+        ),
+        .init(
+            race: DoggoStore.DALMATYNCZYK,
+            letterIndex: 10,
+            image: UIImage(named: DoggoStore.DALMATYNCZYK.lowercased()),
+            isUnlocked: unlockDictionary[DoggoStore.DALMATYNCZYK] == true,
+            isRaceGuessed: raceGuessedDictionary[DoggoStore.DALMATYNCZYK] == true,
+            qrCode: "o3fg(11)",
+            borderColor: Colors.greenBorder
+        ),
+        .init(
+            race: DoggoStore.OWCZAREK_AUSTRALIJSKI,
+            letterIndex: 11,
+            image: UIImage(named: DoggoStore.OWCZAREK_AUSTRALIJSKI.lowercased()),
+            isUnlocked: unlockDictionary[DoggoStore.OWCZAREK_AUSTRALIJSKI] == true,
+            isRaceGuessed: raceGuessedDictionary[DoggoStore.OWCZAREK_AUSTRALIJSKI] == true,
+            qrCode: "https://tinyurl.com/kz833h3j",
+            borderColor: Colors.greenBorder
+        )]
     }
 
     func unlockDoggo(race: String) {
