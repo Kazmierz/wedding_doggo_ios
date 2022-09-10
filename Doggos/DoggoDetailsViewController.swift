@@ -35,6 +35,7 @@ class DoggoDetailsViewController: UIViewController {
         
         if text.lowercased().contains(doggo.race.lowercased()) {
             setRaceGuessed()
+            view.endEditing(true)
             DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) { [unowned self] in
                 self.delegate?.setRaceGuessed(for: self.doggo.race)
                 self.dismiss(animated: true)
