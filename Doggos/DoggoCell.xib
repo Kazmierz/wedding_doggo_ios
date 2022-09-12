@@ -11,37 +11,56 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DoggoCell" id="gTV-IL-0wX" customClass="DoggoCell" customModule="Doggos" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="128" height="86"/>
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="128" height="86"/>
+                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sAi-uc-I3a">
-                        <rect key="frame" x="8" y="8" width="112" height="70"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIs-XX-v9z">
-                        <rect key="frame" x="8" y="32.5" width="112" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8F-Y0-uLj">
+                        <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tVR-Iz-daz">
+                                <rect key="frame" x="0.0" y="0.0" width="130" height="83"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1kO-lx-e1s">
+                                <rect key="frame" x="0.0" y="25" width="130" height="59"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xl-GT-hvt">
+                                <rect key="frame" x="0.0" y="96" width="130" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1Xl-GT-hvt" secondAttribute="trailing" id="7qI-fT-sge"/>
+                            <constraint firstItem="1kO-lx-e1s" firstAttribute="leading" secondItem="n8F-Y0-uLj" secondAttribute="leading" id="9oX-U1-K2P"/>
+                            <constraint firstItem="tVR-Iz-daz" firstAttribute="leading" secondItem="n8F-Y0-uLj" secondAttribute="leading" id="A0Y-5T-0qK"/>
+                            <constraint firstItem="1Xl-GT-hvt" firstAttribute="top" secondItem="1kO-lx-e1s" secondAttribute="bottom" constant="12" id="Ffv-7Y-alG"/>
+                            <constraint firstItem="1kO-lx-e1s" firstAttribute="top" secondItem="n8F-Y0-uLj" secondAttribute="top" constant="25" id="Qxo-Vq-D0L"/>
+                            <constraint firstItem="1Xl-GT-hvt" firstAttribute="top" secondItem="tVR-Iz-daz" secondAttribute="bottom" constant="13" id="RRk-f2-jcE"/>
+                            <constraint firstAttribute="trailing" secondItem="tVR-Iz-daz" secondAttribute="trailing" id="VDn-55-g2Z"/>
+                            <constraint firstAttribute="trailing" secondItem="1kO-lx-e1s" secondAttribute="trailing" id="evy-oj-BKo"/>
+                            <constraint firstItem="1Xl-GT-hvt" firstAttribute="leading" secondItem="n8F-Y0-uLj" secondAttribute="leading" id="o4s-Qs-NMc"/>
+                            <constraint firstAttribute="bottom" secondItem="1Xl-GT-hvt" secondAttribute="bottom" constant="13" id="qIb-s7-faJ"/>
+                            <constraint firstItem="tVR-Iz-daz" firstAttribute="top" secondItem="n8F-Y0-uLj" secondAttribute="top" id="wcA-Q6-u1b"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="sAi-uc-I3a" secondAttribute="bottom" constant="8" id="ADf-Lk-lx5"/>
-                <constraint firstItem="AIs-XX-v9z" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="HNv-Iy-Gsp"/>
-                <constraint firstItem="AIs-XX-v9z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="HWx-Pc-lhR"/>
-                <constraint firstItem="sAi-uc-I3a" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="UZB-Sh-U24"/>
-                <constraint firstItem="sAi-uc-I3a" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="j6z-j1-wzX"/>
-                <constraint firstAttribute="trailing" secondItem="sAi-uc-I3a" secondAttribute="trailing" constant="8" id="vwX-X3-W1V"/>
-                <constraint firstAttribute="trailing" secondItem="AIs-XX-v9z" secondAttribute="trailing" constant="8" id="ys0-nE-zVM"/>
+                <constraint firstItem="n8F-Y0-uLj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9nc-I0-C2x"/>
+                <constraint firstItem="n8F-Y0-uLj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cqP-E8-ppo"/>
+                <constraint firstAttribute="bottom" secondItem="n8F-Y0-uLj" secondAttribute="bottom" id="e1d-we-w5v"/>
+                <constraint firstAttribute="trailing" secondItem="n8F-Y0-uLj" secondAttribute="trailing" id="jGq-A5-fhz"/>
             </constraints>
             <size key="customSize" width="128" height="86"/>
             <connections>
-                <outlet property="imageView" destination="sAi-uc-I3a" id="83Q-pc-vKs"/>
-                <outlet property="nameLabel" destination="AIs-XX-v9z" id="xgk-b6-3OB"/>
+                <outlet property="doggoImageView" destination="tVR-Iz-daz" id="JzE-VG-IOH"/>
+                <outlet property="placeholderImageView" destination="1kO-lx-e1s" id="rnn-Mm-yYC"/>
+                <outlet property="textLabel" destination="1Xl-GT-hvt" id="b5x-TA-1t4"/>
             </connections>
             <point key="canvasLocation" x="188.40579710144928" y="22.767857142857142"/>
         </collectionViewCell>
