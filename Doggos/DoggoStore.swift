@@ -90,7 +90,7 @@ class DoggoStore {
         .init(
             race: DoggoStore.OWCZAREK_NIEMIECKI,
             letterIndex: 4,
-            image: UIImage(named: DoggoStore.OWCZAREK_NIEMIECKI.lowercased()),
+            image: UIImage(named: "owczarek_niemiecki"),
             isUnlocked: unlockDictionary[DoggoStore.OWCZAREK_NIEMIECKI] == true,
             isRaceGuessed: raceGuessedDictionary[DoggoStore.OWCZAREK_NIEMIECKI] == true,
             qrCode: "3f(5)",
@@ -153,7 +153,7 @@ class DoggoStore {
         .init(
             race: DoggoStore.OWCZAREK_AUSTRALIJSKI,
             letterIndex: 11,
-            image: UIImage(named: DoggoStore.OWCZAREK_AUSTRALIJSKI.lowercased()),
+            image: UIImage(named: "owczarek_australijski"),
             isUnlocked: unlockDictionary[DoggoStore.OWCZAREK_AUSTRALIJSKI] == true,
             isRaceGuessed: raceGuessedDictionary[DoggoStore.OWCZAREK_AUSTRALIJSKI] == true,
             qrCode: "https://tinyurl.com/kz833h3j",

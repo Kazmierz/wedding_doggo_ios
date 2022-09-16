@@ -101,6 +101,12 @@ extension DoggosViewController: ScanViewControllerDelegate {
         
         store.unlockDoggo(race: doggo.race)
         reloadData()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let doggoViewController = storyboard.instantiateViewController(withIdentifier: "DoggoDetailsViewController") as! DoggoDetailsViewController
+        doggoViewController.doggo = doggo
+        doggoViewController.delegate = self
+        present(doggoViewController, animated: true)
     }
 }
 
