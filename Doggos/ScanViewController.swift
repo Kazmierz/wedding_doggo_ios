@@ -97,10 +97,12 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
             guard let stringValue = readableObject.stringValue else { return }
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-            found(code: stringValue)
+            
+            dismiss(animated: true) {
+                self.found(code: stringValue)
+            }
         }
 
-        dismiss(animated: true)
     }
 
     func found(code: String) {
